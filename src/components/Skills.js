@@ -19,11 +19,14 @@ const skills = [
   { name: "Flask", icon: "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" },
   { name: "Django", icon: "https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green"},
   { name: "FastAPI", icon: "https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white"},
+  { name: "GraohQL", icon: "https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white"},
+  { name: "PyTest", icon: "https://ggdx.co.uk/media/images/pytest.2e16d0ba.fill-744x450.png"},
 
   { name: "SQLAlchemy", icon: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*msfsws06ImMSJYop.jpg"},
   { name: "Postgre", icon: "https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"},
   { name: "MySQL", icon: "https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"},
   { name: "REST API", icon: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*5Qh4y7P8OtJBqsdr.jpg"},
+  {name: "RabbitMQ", icon: "https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=for-the-badge&logo=rabbitmq&logoColor=white"},
 
   // { name: "Microservice Architecture"},
   { name: "Docker", icon: "https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white"},
@@ -35,13 +38,31 @@ const skills = [
 
 ];
 
+const communication_mediums = [
+  {name: "Slack", icon: "https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"},
+  {name: "Zoom", icon: "https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white"},
+  {name: "Skype", icon: "https://img.shields.io/badge/Skype-00AFF0?style=for-the-badge&logo=skype&logoColor=white"},
+
+];
+
 const tools = [
   {name: "", icon: "https://img.shields.io/badge/dbeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white"},
   {name: "", icon: "https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"},
   {name: "", icon: "https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white"},
-  {name: "", icon: "https://img.shields.io/badge/Bitbucket-0747a6?style=for-the-badge&logo=bitbucket&logoColor=white"}
+  {name: "", icon: "https://img.shields.io/badge/Bitbucket-0747a6?style=for-the-badge&logo=bitbucket&logoColor=white"},
+  {name: "", icon: "https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white"},
+  {name: "", icon: "https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white"},
+  {name: "", icon: "https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white"},
+  {name: "", icon: "https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white"}
+];
 
-]
+const soft_skills = [
+  {name: "Documentataion", icon: ""},
+  {name: "Communication", icon: ""},
+  {name: "Team Player", icon: ""},
+  {name: "Adaptable", icon: ""}
+];
+
 
 export const Skills = () => {
   const responsive = {
@@ -72,8 +93,8 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-
+                        <h2>Professional Toolkit 🛠️</h2>
+                    {/* TECH SKILLS */}
                         <div className="d-flex align-items-center my-4">
                           <hr style={lineStyle} className="flex-grow-1" />
                           <span className="mx-3" style={{ fontSize:"25px",fontWeight: "bold", color: "gray" }}>
@@ -81,8 +102,6 @@ export const Skills = () => {
                           </span>
                           <hr style={lineStyle} className="flex-grow-1" />
                         </div>
-
-                      
                         <div className="container mt-1">
                           <Row xs={1} sm={2} md={3} lg={4} className="g-4">
                             {skills.map((skill, index) => (
@@ -96,14 +115,13 @@ export const Skills = () => {
                                       alt={skill.name}
                                       style={{
                                         height: "65px", 
-                                        // width: "50px",
                                         marginBottom: "5px", 
                                       }}
                                     />
                                     <div className="hover-overlay">
                                       <p className="hover-text">{skill.name}</p>
                                     </div>
-                                    {/* <Card.Text>{skill.name}</Card.Text> */}
+                       
                                   </Card.Body>
                                 </Card>
                               </Col>
@@ -111,6 +129,7 @@ export const Skills = () => {
                           </Row>
                         </div>
 
+                  {/* TOOLS */}
                         <div className="d-flex align-items-center my-4">
                           <hr style={lineStyle} className="flex-grow-1" />
                           <span className="mx-3" style={{ fontSize:"25px",fontWeight: "bold", color: "gray" }}>
@@ -122,12 +141,16 @@ export const Skills = () => {
                           <Row xs={1} sm={2} md={3} lg={4} className="g-4">
                             {tools.map((tool, index) => (
                               <Col key={index}>
-                                <Card className="custom-tool-card ">
+                                <Card className="custom-tool-card">
                                   <Card.Body>
                                     <Card.Img
                                       variant="top"
                                       src={tool.icon}
                                       alt={tool.name}
+                                      style={{
+                                        height: "65px", 
+                                        marginBottom: "5px", 
+                                      }}
                                     />
                                     <div className="hover-overlay">
                                       <p className="hover-text">{tool.name}</p>
@@ -138,6 +161,60 @@ export const Skills = () => {
                             ))}
                           </Row>
                         </div>
+                  {/* SOFT SKILLS */}
+                        <div className="d-flex align-items-center my-4">
+                          <hr style={lineStyle} className="flex-grow-1" />
+                          <span className="mx-3" style={{ fontSize:"25px",fontWeight: "bold", color: "gray" }}>
+                              {"Soft Skills"}
+                          </span>
+                          <hr style={lineStyle} className="flex-grow-1" />
+                        </div>
+                        <div>
+                          <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+                            {soft_skills.map((soft_skill, index) => (
+                              <Col key={index}>
+                                <Card className="custom-text-card">
+                                  <Card.Body>
+                                    <Card.Text>{soft_skill.name}</Card.Text> 
+                                  </Card.Body>
+                                </Card>
+                              </Col>
+                            ))}
+                          </Row>
+                        </div>
+
+                  {/* In progress*/}
+
+                  {/* Communication mediums */}
+                        <div className="d-flex align-items-center my-4">
+                          <hr style={lineStyle} className="flex-grow-1" />
+                          <span className="mx-3" style={{ fontSize:"25px",fontWeight: "bold", color: "gray" }}>
+                              {"Communication Mediums"}
+                          </span>
+                          <hr style={lineStyle} className="flex-grow-1" />
+                        </div>
+                        <div>
+                          <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+                            {communication_mediums.map((communication_medium, index) => (
+                              <Col key={index}>
+                                <Card className="custom-skill-card">
+                                  <Card.Body>
+                                    <Card.Img
+                                      variant="top"
+                                      src={communication_medium.icon}
+                                      alt={communication_medium.name}
+                                      style={{
+                                        height: "65px", 
+                                        marginBottom: "5px", 
+                                      }}
+                                    /> 
+                                  </Card.Body>
+                                </Card>
+                              </Col>
+                            ))}
+                          </Row>
+                        </div>
+
 
                     </div>
                 </div>

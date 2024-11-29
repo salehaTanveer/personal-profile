@@ -68,6 +68,27 @@
   transform: scale(1.1); 
 }
 
+/********* TEXT CARD*************/
+.custom-text-card {
+  box-shadow: 0px 4px 6px rgba(51, 50, 50, 0.541); 
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%) !important; 
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-text-card .card-text {
+  color: #ffffff !important;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.custom-text-card:hover {
+  color: #B8B8B8;
+  transform: scale(1.1); 
+}
+
 /************ Default Css ************/
 * {
   margin: 0;
@@ -393,6 +414,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+/********anumation div***********/
+.animate-text-container {
+  height: 50em !important; 
+}
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
